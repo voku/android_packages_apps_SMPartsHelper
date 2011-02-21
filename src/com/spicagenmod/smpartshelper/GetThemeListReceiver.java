@@ -1,4 +1,4 @@
-package com.cyanogenmod.smpartshelper;
+package com.spicagenmod.smpartshelper;
 
 import android.os.Bundle;
 import android.os.Environment;
@@ -12,12 +12,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.DataInputStream;
 
-import com.cyanogenmod.smpartshelper.R;
+import com.spicagenmod.smpartshelper.R;
 
 
 public class GetThemeListReceiver extends BroadcastReceiver {
 
-    public static final String getList = "com.cyanogenmod.smparts.GET_THEME_LIST";
+    public static final String getList = "com.spicagenmod.smparts.GET_THEME_LIST";
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -32,7 +32,7 @@ public class GetThemeListReceiver extends BroadcastReceiver {
                         for (int i=0; i < numfiles; i++) {
                             filelist[i] = files[i].getName();
                             }
-                        Intent returnFiles = new Intent("com.cyanogenmod.smpartshelper.GET_THEME_LIST");
+                        Intent returnFiles = new Intent("com.spicagenmod.smpartshelper.GET_THEME_LIST");
                         returnFiles.putExtra("filelist", filelist);
                         returnFiles.putExtra("gotfile", 1);
                         context.sendBroadcast(returnFiles);
@@ -40,7 +40,7 @@ public class GetThemeListReceiver extends BroadcastReceiver {
                 } catch (Exception e) { }
             } else {
                 themeDir.mkdir(); // make the folder if it's not there yet.
-                Intent returnFiles = new Intent("com.cyanogenmod.smpartshelper.GET_THEME_LIST");
+                Intent returnFiles = new Intent("com.spicagenmod.smpartshelper.GET_THEME_LIST");
                 returnFiles.putExtra("gotfile", -1);
                 returnFiles.putExtra("filelist", new String[] {});
                 context.sendBroadcast(returnFiles);

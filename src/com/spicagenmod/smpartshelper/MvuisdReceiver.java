@@ -1,4 +1,4 @@
-package com.cyanogenmod.smpartshelper;
+package com.spicagenmod.smpartshelper;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -12,12 +12,12 @@ import java.io.File;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 
-import com.cyanogenmod.smpartshelper.R;
+import com.spicagenmod.smpartshelper.R;
 
 
 public class MvuisdReceiver extends BroadcastReceiver {
 
-    public static final String mvUiSd = "com.cyanogenmod.smparts.SAVE_CMPARTS_UI";
+    public static final String mvUiSd = "com.spicagenmod.smparts.SAVE_CMPARTS_UI";
 
     @Override
     public void onReceive(Context context, Intent intent) {

@@ -1,4 +1,4 @@
-package com.cyanogenmod.smpartshelper;
+package com.spicagenmod.smpartshelper;
 
 import android.os.Bundle;
 import android.os.Environment;
@@ -11,12 +11,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.DataInputStream;
 
-import com.cyanogenmod.smpartshelper.R;
+import com.spicagenmod.smpartshelper.R;
 
 
 public class MvsduiReceiver extends BroadcastReceiver {
 
-    public static final String mvSdUi = "com.cyanogenmod.smparts.RESTORE_CMPARTS_UI";
+    public static final String mvSdUi = "com.spicagenmod.smparts.RESTORE_CMPARTS_UI";
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -32,7 +32,7 @@ public class MvsduiReceiver extends BroadcastReceiver {
                     in.readFully(b);
                     in.close();
                     String result = new String(b, 0, b.length);
-                    Intent UiSd = new Intent("com.cyanogenmod.smpartshelper.RESTORE_CMPARTS_UI");
+                    Intent UiSd = new Intent("com.spicagenmod.smpartshelper.RESTORE_CMPARTS_UI");
                     UiSd.putExtra("xmldataret", result);
                     context.sendBroadcast(UiSd);
                 } catch (Exception e) { }
